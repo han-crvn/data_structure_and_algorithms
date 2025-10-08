@@ -20,6 +20,7 @@ def works():
 def contact():
      return render_template('contact.html')
 
+
 @app.route('/ToUpperCase', methods=['GET', 'POST'])
 def to_upper_case():
     result = None
@@ -27,6 +28,7 @@ def to_upper_case():
         input_string = request.form.get('inputString', '')
         result = input_string.upper()
     return render_template('touppercase.html', result=result)
+
 
 @app.route('/AreaOfCircle', methods=['GET', 'POST'])
 def area_circle():
@@ -39,6 +41,7 @@ def area_circle():
             result = "Invalid input"
     return render_template('area_of_circle.html', result=result)
 
+
 @app.route('/AreaOfTriangle', methods=['GET', 'POST'])
 def area_triangle():
     result = None
@@ -50,6 +53,7 @@ def area_triangle():
         except ValueError:
             result = "Invalid input"
     return render_template('area_of_triangle.html', result=result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
