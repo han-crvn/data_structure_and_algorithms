@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area of Circle</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --text-color: #000000;
+            --box--color: #FFFBDE;
+            --border-color: #4682A9;
+            --background-color: #91C8E4;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", Arial;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            background-color: var(--background-color);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            height: 80px;
+            margin-top: 10px;
+        }
+
+        nav .left a {
+            font-size: 35px;
+            font-weight: 700;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        nav .left a span {
+            margin-left: 10px;
+        }
+
+        nav .left a:hover {
+            opacity: 0.7;
+        }
+
+        nav .left a:active {
+            opacity: 0.3;
+        }
+
+        h1 {
+            margin-top: 90px;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        form label {
+            font-size: 20px;
+        }
+
+        form input[type="number"] {
+            font-size: 18px;
+            padding: 8px;
+            width: 300px;
+            background-color: var(--box--color);
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        form input[type="submit"] {
+            font-size: 18px;
+            padding: 8px 20px;
+            background-color: var(--box--color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        form input[type="submit"]:hover {
+            opacity: 0.7;
+        }
+
+        form input[type="submit"]:active {
+            opacity: 0.4;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;     
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav>
+    <div class="left">
+         <a href="/"> 
+                <i class="fa-solid fa-house"></i>
+                <span>HOME PAGE</span> 
+        </a>
+    </div>
+    </nav>
+    
+    <h1>Area of Circle</h1>
+
+    <form action="/AreaOfTriangle" method="post">
+        <label for="height">Enter the height (h):</label>
+        <input type="number" step="any" id="base" name="base" required>
+        <label for="base">Enter the base (b):</label>
+        <input type="number" step="any" id="height" name="height" required>
+        <input type="submit" value="Compute Area">
+    </form>
+
+    {% if result %}
+    <div>
+        <p>Area of Triangle: {{ result }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
