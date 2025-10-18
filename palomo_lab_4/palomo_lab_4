@@ -1,0 +1,105 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        if self.head:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            self.head = new_node
+            self.tail = new_node
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head:
+            self.tail.next = new_node
+            self.tail = new_node
+        else:
+            self.head = new_node
+            self.tail = new_node
+
+    def search(self, data):
+        current_node = self.head
+        while current_node:
+            if current_node.data == data:
+                return True
+            else:
+                current_node = current_node.next
+        return False
+        
+    def remove_beginning(self):
+        if not self.head:
+            return None
+        removed_data = self.head.data
+        self.head = self.head.next
+        if not self.head:
+            self.tail = None
+        return removed_data
+
+    
+    def remove_at_end(self):
+        if not self.head:
+            return None
+        if self.head == self.tail:
+            removed_data = self.head.data
+            self.head = None
+            self.tail = None
+            return removed_data
+        
+        current = self.head
+        while current.next != self.tail:
+            current = current.next
+        removed_data = self.tail.data
+        current.next = None
+        self.tail = current
+        return removed_data
+
+    def remove_at(self, data):
+        if not self.head:
+            return None
+        if self.head.data == data:
+            return self.remove_beginning()
+
+        current = self.head
+        while current.next:
+            if current.next.data == data:
+                removed_data = current.next.data
+
+                if current.next == self.tail:
+                    self.tail = current
+                current.next = current.next.next
+                return removed_data
+            current = current.next
+        return None
+
+    def display(self):
+        current_node = self.head
+        while current_node:
+            print(current_node.data, end=" ===> ")
+            current_node = current_node.next
+        print("none")
+
+sandwich_preparation = LinkedList()
+sandwich_preparation.insert_at_end("prepare breads")
+sandwich_preparation.insert_at_end("spread the filling in bread")
+sandwich_preparation.insert_at_end("top the bread with filling with another bread")
+
+print("Full List:")
+sandwich_preparation.display()
+
+print("\nRemoved at beginning:", sandwich_preparation.remove_beginning())
+sandwich_preparation.display()
+
+print("\nRemoved at end:", sandwich_preparation.remove_at_end())
+sandwich_preparation.display()
+
+print("\nRemoved 'top the bread with filling with another bread':", sandwich_preparation.remove_at("top the bread with filling with another bread"))
+sandwich_preparation.display()
