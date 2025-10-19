@@ -95,21 +95,26 @@ class LinkedList:
         while current_node:
             print(current_node.data, end=" ===> ")
             current_node = current_node.next
-        print("none")
+        print("None")
 
+# Add the data in list
 sandwich_preparation = LinkedList()
-sandwich_preparation.insert_at_end("prepare breads")
+sandwich_preparation.insert_at_beginning("prepare breads")
 sandwich_preparation.insert_at_end("spread the filling in bread")
 sandwich_preparation.insert_at_end("top the bread with filling with another bread")
 
-print("Full List:")
+# Print full list.
+print("Full List of preparing a sandwich:")
 sandwich_preparation.display()
 
+# Print the list without the first node.
 print("\nRemoved the first node:", sandwich_preparation.remove_beginning())
 sandwich_preparation.display()
 
+# Print the list without the first and last node.
 print("\nRemoved the last node:", sandwich_preparation.remove_at_end())
 sandwich_preparation.display()
 
+# Print the list without the first, last, and the given node.
 print("\nRemoved 'spread the filling in bread':", sandwich_preparation.remove_at("spread the filling in bread"))
 sandwich_preparation.display()
