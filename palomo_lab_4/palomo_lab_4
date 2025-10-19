@@ -1,13 +1,18 @@
 class Node:
+    
+    # Initialize the node.
     def __init__(self, data):
         self.data = data
         self.next = None
 
 class LinkedList:
+    
+    # Initialize the list.
     def __init__(self):
         self.head = None
         self.tail = None
 
+    # Insert data before the first node.
     def insert_at_beginning(self, data):
         new_node = Node(data)
         if self.head:
@@ -16,7 +21,8 @@ class LinkedList:
         else:
             self.head = new_node
             self.tail = new_node
-
+    
+    # Insert data after the last node.
     def insert_at_end(self, data):
         new_node = Node(data)
         if self.head:
@@ -26,6 +32,7 @@ class LinkedList:
             self.head = new_node
             self.tail = new_node
 
+    # Return true if the data exist.
     def search(self, data):
         current_node = self.head
         while current_node:
@@ -34,7 +41,8 @@ class LinkedList:
             else:
                 current_node = current_node.next
         return False
-        
+
+    # Remove the starting node. 
     def remove_beginning(self):
         if not self.head:
             return None
@@ -44,7 +52,7 @@ class LinkedList:
             self.tail = None
         return removed_data
 
-    
+    # Remove the last node.
     def remove_at_end(self):
         if not self.head:
             return None
@@ -61,7 +69,8 @@ class LinkedList:
         current.next = None
         self.tail = current
         return removed_data
-
+    
+    # Remove specific node.
     def remove_at(self, data):
         if not self.head:
             return None
@@ -80,6 +89,7 @@ class LinkedList:
             current = current.next
         return None
 
+    # Display the current list that it has.
     def display(self):
         current_node = self.head
         while current_node:
