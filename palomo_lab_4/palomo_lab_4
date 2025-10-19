@@ -77,17 +77,17 @@ class LinkedList:
         if self.head.data == data:
             return self.remove_beginning()
 
-        current = self.head
-        while current.next:
-            if current.next.data == data:
-                removed_data = current.next.data
+        current = self.head 
+        while current.next and current.next.data != data: 
+            current = current.next 
+        if not current.next: 
+            return None
 
-                if current.next == self.tail:
-                    self.tail = current
-                current.next = current.next.next
-                return removed_data
-            current = current.next
-        return None
+        if current.next == self.tail: 
+            self.tail = current 
+        removed = current.next.data 
+        current.next = current.next.next 
+        return removed
 
     # Display the current list that it has.
     def display(self):
@@ -105,11 +105,11 @@ sandwich_preparation.insert_at_end("top the bread with filling with another brea
 print("Full List:")
 sandwich_preparation.display()
 
-print("\nRemoved at beginning:", sandwich_preparation.remove_beginning())
+print("\nRemoved the first node:", sandwich_preparation.remove_beginning())
 sandwich_preparation.display()
 
-print("\nRemoved at end:", sandwich_preparation.remove_at_end())
+print("\nRemoved the last node:", sandwich_preparation.remove_at_end())
 sandwich_preparation.display()
 
-print("\nRemoved 'top the bread with filling with another bread':", sandwich_preparation.remove_at("top the bread with filling with another bread"))
+print("\nRemoved 'spread the filling in bread':", sandwich_preparation.remove_at("spread the filling in bread"))
 sandwich_preparation.display()
