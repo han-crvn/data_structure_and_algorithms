@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from palomo_lab_5.infix_converter import infix_to_postfix
 
 app = Flask(__name__)
 
@@ -54,6 +55,13 @@ def area_triangle():
             result = "Invalid input"
     return render_template('area_of_triangle.html', result=result)
 
+@app.route('/InfixConverter', methods=['GET', 'POST'])
+def infix_converter():
+    postfix = None
+    if request.method == 'POST':
+        infix = request.form['infix']
+        postfix = infix_to_postfix(infix)
+    return render_template('infix_to_postfix.html', postfix=postfix)
 
 if __name__ == "__main__":
     app.run(debug=True)
