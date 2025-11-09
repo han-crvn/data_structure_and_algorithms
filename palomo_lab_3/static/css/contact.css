@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    margin-top: -100px;
+}
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin-top: 100px;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('../images/background-header.jpg') Bottom/cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SOCIAL LINKS SECTION */
+.contact-section {
+    min-height: calc(100vh - 100px);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* SOCIAL LINKS SECTION */
+.social-links {
+    padding: 100px 20px 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.links-container a {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 30px 60px;
+    border-radius: 12px;;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.links-container a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.links-container a i {
+    font-size: 1.4rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+    body {
+        padding-top: 0;
+    }
+
+    .social-links {
+        padding: 20px 10px;
+    }
+
+    .links-container {
+        gap: 5px;
+    }
+
+    .links-container a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .links-container a span {
+        display: none;
+    }
+
+    .links-container a i {
+        margin: 0;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.5rem;
+    }
+}

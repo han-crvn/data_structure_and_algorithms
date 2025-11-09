@@ -3,144 +3,114 @@
 <head>
     <title>Convert to Uppercase</title>
 
+    <!--Font Family-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="..//static/css/header.css">
+    <link rel="stylesheet" href="..//static/css/sidebar.css">
+    <link rel="stylesheet" href="..//static/css/touppercase.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        :root {
-            --text-color: #000000;
-            --box--color: #FFFBDE;
-            --border-color: #4682A9;
-            --background-color: #91C8E4;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Poppins", Arial;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-
-            background-color: var(--background-color);
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 50px;
-            height: 80px;
-            margin-top: 10px;
-        }
-
-        nav .left a {
-            font-size: 35px;
-            font-weight: 700;
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-
-        nav .left a span {
-            margin-left: 10px;
-        }
-
-        nav .left a:hover {
-            opacity: 0.7;
-        }
-
-        nav .left a:active {
-            opacity: 0.3;
-        }
-
-        h1 {
-            margin-top: 90px;
-            text-align: center;
-            color: var(--text-color);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        form label {
-            font-size: 20px;
-        }
-
-        form input[type="text"] {
-            font-size: 18px;
-            padding: 8px;
-            width: 300px;
-            background-color: var(--box--color);
-            border: 2px solid var(--border-color);
-            border-radius: 5px;
-            outline: none;
-        }
-
-        form input[type="submit"] {
-            font-size: 18px;
-            padding: 8px 20px;
-            background-color: #FFFBDE;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-
-        form input[type="submit"]:hover {
-            opacity: 0.7;
-        }
-
-        form input[type="submit"]:active {
-            opacity: 0.4;
-        }
-
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;     
-            margin: 10px;
-        }
-    </style>
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
 
 </head>
+
 <body>
-    
-    <nav>
-    <div class="left">
-         <a href="/"> 
-                <i class="fa-solid fa-house"></i>
-                <span>HOME PAGE</span> 
-        </a>
-    </div>
+    <!-- SIDEBAR -->
+    <nav id="sidebar" class="sidebar">
+    <ul>
+        <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+        <li><a href="/works"><i class="fa-solid fa-diagram-project"></i> Works</a></li>
+        <li><a href="/contact"><i class="fa-solid fa-address-book"></i> Contacts</a></li>
+    </ul>
     </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <div id="menu-icon" class="menu-icon">&#9776;</div>
+            <div class="logo-icon">Blue Paradise</div>
+        </div>
+
+        <div class="header-right">
+            <nav class="nav-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/works" class="active">Works</a></li>
+                <li><a href="/contact">Contacts</a></li>
+            </ul>
+            </nav>
+
+            <form class="search-form" action="#" method="GET" role="search">
+            <input
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"
+                name="q"
+            />
+            <button type="submit" aria-label="Submit Search">
+                <i class="fa fa-search"></i>
+            </button>
+            </form>
+        </div>
+    </header>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
     
-    <h1>Convert String to Uppercase</h1>
+    <!-- MAIN CONTENT -->
+    <div class="content-wrapper">
+        <div class="calculator-card">
+            <h1>Convert to Uppercase</h1>
 
-    <form action="/ToUpperCase" method="post">
-        <label for="inputString">Enter a string:</label>
-        <input type="text" id="inputString" name="inputString">
-        <input type="submit" value="Convert">
-    </form>
+            <form action="/ToUpperCase" method="post">
+                <div class="form-group">
+                    <label for="inputString">
+                        <i class="fa-solid fa-font"></i>
+                        Enter a string:
+                    </label>
+                    <input type="text" id="inputString" name="inputString" required placeholder="e.g., hello world">
+                </div>
+                <input type="submit" value="Convert to Uppercase">
+            </form>
 
-    {% if result %}
-    <div>
-        <p>Converted string: {{ result }}</p>
+            {% if result %}
+            <div class="result-container">
+                <p>
+                    <i class="fa-solid fa-check-circle"></i>
+                    Converted string: <span class="result-value">{{ result }}</span>
+                </p>
+            </div>
+            {% endif %}
+
+        </div>
     </div>
-    {% endif %}
+
+    <script>
+        // SIDEBAR
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle("active");
+                overlay.classList.toggle("active");
+            }
+            
+            menuIcon.addEventListener("click", toggleSidebar);
+            overlay.addEventListener("click", toggleSidebar);
+        });
+    </script>
 </body>
 </html>

@@ -1,140 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Area of Circle Calculator</title>
 
+    <!--Font Family-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--CSS-->
+    <link rel="stylesheet" href="..//static/css/header.css">
+    <link rel="stylesheet" href="..//static/css/sidebar.css">
+    <link rel="stylesheet" href="..//static/css/works.css">
 
-    <style>
-        
-        :root {
-            --text-color: #000000;
-            --link-color: #4682A9;
-            --background-color: #91C8E4;
-        }
-        
-        html, body {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-        }
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
 
-         body {
-            background-color: var(--background-color);
-            font-family: "Poppins", Arial;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 0 50px;
-            height:  100px;
-        }
-
-        nav .left a {
-            font-size: 35px;
-            font-weight: 700;
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-
-        nav .left a span {
-            margin-left: 10px;
-        }
-
-        nav .left a:hover {
-            opacity: 0.7;
-        }
-
-        nav .left a:active {
-            opacity: 0.3;
-        }
-
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;  
-            flex-direction: column;   
-            min-height: 40vh;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--text-color);
-        }
-        
-        ul {
-            list-style-type: none;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            gap: 100px;
-            padding: 0;
-            margin-top: -360px;
-        }
-
-        li {
-            display: inline-block;
-            text-align: center;
-            padding: 10px 20px;
-            border: 2px solid var(--link-color);
-            border-width: 3px;
-            border-radius: 5px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            color: var(--text-color);
-            transition: 0.1s;
-            cursor: pointer;
-        }
-
-        li:hover {
-            opacity: 0.7;
-        }
-
-        li:active {
-            opacity: 0.4;
-        }
-
-        li a{
-            font-size: 20px;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-
-    </style>
 </head>
 
 <body>
-
-    <nav>
-    <div class="left">
-         <a href="/"> 
-                <i class="fa-solid fa-house"></i>
-                <span>HOME PAGE</span> 
-        </a>
-    </div>
+    <!-- SIDEBAR -->
+    <nav id="sidebar" class="sidebar">
+    <ul>
+        <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+        <li><a href="/works"><i class="fa-solid fa-diagram-project"></i> Works</a></li>
+        <li><a href="/contact"><i class="fa-solid fa-address-book"></i> Contacts</a></li>
+    </ul>
     </nav>
 
-    <div>
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <div id="menu-icon" class="menu-icon">&#9776;</div>
+            <div class="logo-icon">Blue Paradise</div>
+        </div>
+
+        <div class="header-right">
+            <nav class="nav-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/works" class="active">Works</a></li>
+                <li><a href="/contact">Contacts</a></li>
+            </ul>
+            </nav>
+
+            <form class="search-form" action="#" method="GET" role="search">
+            <input
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"
+                name="q"
+            />
+            <button type="submit" aria-label="Submit Search">
+                <i class="fa fa-search"></i>
+            </button>
+            </form>
+        </div>
+    </header>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+    <section class="hero-section">
         <h1>Welcome to my Programming Works</h1>
-    </div>
-    
-    <div>
-        <ul>
-            <li><a href="/ToUpperCase">To Upper Case</a></li>
-            <li><a href="/AreaOfCircle">Area of a Circle</a></li>
-            <li><a href="/AreaOfTriangle">Area of a Triangle</a></li>
-            <li><a href="/InfixConverter">Infix to Postfix</a></li>
-        </ul>
-    </div>
-    
+    </section>
+
+    <section class="works-section">
+        <div class="works-container">
+            <a href="/ToUpperCase" class="work-card">
+                <i class="fa-solid fa-arrow-up"></i>
+                <h3>To Upper Case</h3>
+            </a>
+
+            <a href="/AreaOfCircle" class="work-card">
+                <i class="fa-solid fa-circle"></i>
+                <h3>Area of a Circle</h3>
+            </a>
+
+            <a href="/AreaOfTriangle" class="work-card">
+                <i class="fa-solid fa-play"></i>
+                <h3>Area of a Triangle</h3>
+            </a>
+
+            <a href="/InfixConverter" class="work-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Infix to Postfix</h3>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // SIDEBAR
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle("active");
+                overlay.classList.toggle("active");
+            }
+            
+            menuIcon.addEventListener("click", toggleSidebar);
+            overlay.addEventListener("click", toggleSidebar);
+        });
+    </script>
 </body>
 </html>
